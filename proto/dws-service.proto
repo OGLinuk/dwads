@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message UploadWADRequest {
+    bytes data = 1;
+}
+
+message UploadWADResponse {
+    bool success = 1;
+}
+
+service DWSService {
+    rpc UploadWAD(stream UploadWADRequest) returns (UploadWADResponse);
+}
